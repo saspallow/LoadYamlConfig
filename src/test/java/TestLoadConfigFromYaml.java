@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import java.util.HashMap;
 
-public class TestLoadConfigWithYaml {
+public class TestLoadConfigFromYaml {
 
     @Test
     public void testLoadConfigFromYaml(){
