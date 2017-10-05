@@ -21,11 +21,14 @@ public class MappingModel {
 
     public void setMapping(HashMap<String, String> mapping) {
         this.mapping = mapping;
-        Map<String, String> mapInversed =
-                mapping.entrySet()
-                        .stream()
-                        .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey));
-        this.mapping.putAll(mapInversed);
+        this.mapping.putAll(generateBackward(mapping));
+    }
+
+    private Map<String, String> generateBackward(HashMap<String, String> mapping) {
+        return mapping.entrySet()
+                .stream()
+                .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey));
+
     }
 
     @Override
